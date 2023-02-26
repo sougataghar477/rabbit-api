@@ -6,22 +6,22 @@ function Docs() {
         <Box mb={6}>
 
         <Text  fontSize={'2xl'}>Fetch random image from a breed</Text>
-        <Code mb={1} >http://localhost:3000/api/breeds/[name]</Code>
+        <Code mb={1} >https://rabbit-api-pi.vercel.app/api/breeds/[name]</Code>
         <Text mb={1} >Example:</Text>
-        <Code mb={1} >http://localhost:3000/api/breeds/Rex</Code>
+        <Code mb={1} >https://rabbit-api-pi.vercel.app/api/breeds/Rex</Code>
         </Box>
         <Box mb={6}>
 
         <Text    fontSize={'2xl'}>Fetch random image from the database</Text>
         <Text  mb={1}>Example:</Text>
-        <Code  mb={1}>http://localhost:3000/api/random</Code>
+        <Code  mb={1}>https://rabbit-api-pi.vercel.app/api/random</Code>
         </Box>
         <Box mb={6}>
 
         <Text    fontSize={'2xl'}>Fetch  image from an id you got after submitting.</Text>
-        <Code  mb={1}>http://localhost:3000/api/id/[urlId]</Code>
+        <Code  mb={1}>https://rabbit-api-pi.vercel.app/api/id/[urlId]</Code>
         <Text  mb={1}>Example:</Text>
-        <Code  mb={1}>http://localhost:3000/api/id/c4fw4c</Code>
+        <Code  mb={1}>https://rabbit-api-pi.vercel.app/api/id/c4fw4c</Code>
         </Box>
     </Container> );
 }

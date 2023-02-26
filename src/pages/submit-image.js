@@ -50,9 +50,10 @@ function SubmitImage() {
   };
   return (
     <Container maxW="40ch" py={16}>
+        <Text mb={2} fontSize={'2xl'}>Submit a photo of your pet rabbit</Text>
       <FormControl>
         <FormLabel>Breed Name</FormLabel>
-        <Input focusBorderColor="black"
+        <Input 
           placeholder="Enter breed name"
           onInput={(e) => setBreed(e.target.value)}
           value={breed}
