@@ -49,7 +49,7 @@ function SubmitImage() {
     });
   };
   return (
-    <Container maxW="40ch" py={16}>
+    <Container maxW="40ch" py={[4, 4, 16]}>
         <Text mb={2} fontSize={'2xl'}>Submit a photo of your pet rabbit</Text>
       <FormControl>
         <FormLabel>Breed Name</FormLabel>

@@ -1,10 +1,10 @@
 import { Container,Code,Text, Box,Center } from "@chakra-ui/react";
 
 function Docs() {
-    return ( <Container   lineHeight={1.6} maxW="60ch" py={16}>
+    return ( <Container   lineHeight={1.6} maxW="60ch" py={[4, 4, 16]}>
         
         <Box mb={6}>
-
+        <Text mb={2} fontSize={'2xl'}>Documentation</Text>
         <Text  fontSize={'2xl'}>Fetch random image from a breed</Text>
         <Code mb={1} >https://rabbit-api-pi.vercel.app/api/breeds/[name]</Code>
         <Text mb={1} >Example:</Text>
