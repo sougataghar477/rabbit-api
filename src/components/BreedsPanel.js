@@ -6,12 +6,17 @@ function BreedsPanel({changePhoto}) {
     let [errorMsg,setMsg]=useState("");
     let [isDisabled,setDisabled]=useState(false);
     const breedCall = async (breed) => {
-        setDisabled(true);
-        let rabbit = await fetch(`/api/breeds/${breed}`).then((a) => a.json());
-        console.log(rabbit);
-        setDisabled(false);
-        rabbit.url ? changePhoto(rabbit.url) :errorHandling(rabbit);
-        
+        if(breed.length>0){
+
+            setDisabled(true);
+            let rabbit = await fetch(`/api/breeds/${breed}`).then((a) => a.json());
+            console.log(rabbit);
+            setDisabled(false);
+            rabbit.url ? changePhoto(rabbit.url) :errorHandling(rabbit);
+        }
+        else{
+            errorHandling("Please select an option")
+        }
     };
     const errorHandling=(msg)=>{
         setMsg(msg);

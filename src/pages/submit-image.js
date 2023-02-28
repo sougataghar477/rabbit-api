@@ -11,8 +11,11 @@ import {
   Text,
   Box,
   Link,
+  Flex,useToast 
 } from "@chakra-ui/react";
+import {CopyIcon } from '@chakra-ui/icons'
 function SubmitImage() {
+  const toast=useToast();
   const fileInputRef = useRef(null);
   let [isSubmitting, setSubmitting] = useState(false);
   const [fileData, setfileData] = useState("");
@@ -48,8 +51,18 @@ function SubmitImage() {
       setUrl(returnedId);
     });
   };
+  const copyLink=()=>{
+    navigator.clipboard.writeText(returnedUrl);
+    toast({
+      title: 'Link copied.',
+      description: "Your link has been copied.",
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })
+  }
   return (
-    <Container maxW="40ch" py={[4, 4, 16]}>
+    <Container maxW="40ch" py={16}>
         <Text mb={2} fontSize={'2xl'}>Submit a photo of your pet rabbit</Text>
       <FormControl>
         <FormLabel>Breed Name</FormLabel>
@@ -85,9 +98,12 @@ function SubmitImage() {
         {returnedUrl && (
           <Box mt={6} textAlign="center" fontWeight={"bold"}>
             <Text>Here is the link to your image 👇</Text>
+            <Flex  >
             <Link fontStyle={'italic'} color={"green"} isExternal href={returnedUrl}>
-              {returnedUrl}
+              {returnedUrl } 
             </Link>
+            <CopyIcon onClick={copyLink} cursor={'pointer'} color={"green"} ml={2}/>
+            </Flex>
           </Box>
         )}
       </FormControl>

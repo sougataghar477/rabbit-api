@@ -7,5 +7,5 @@ export default async function handler(req, res) {
     breed=breed.toLowerCase();
     console.log({breed,urlId});
     await db.collection("rabbits").insertOne({breed,url,urlId});
-    res.status(200).json(`http://localhost:${PORT}/api/id/${urlId}`)
+    res.status(200).json(`https://rabbit-api-pi.vercel.app/api/id/${urlId}`)
   }

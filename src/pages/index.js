@@ -11,6 +11,7 @@ import {
     TabPanels,
     Tab,
     TabPanel,
+    Grid,
     Input,Image,Select 
 } from "@chakra-ui/react";
 import Link from "next/link";
@@ -29,16 +30,16 @@ function Home() {
                 {/* Left Side starts below */}
                 <Box flex={1}>
                     {/* Heading start */}
-                    <Text fontSize={["3xl","3xl","4xl"]} lineHeight={1.2}>
+                    <Text   fontSize={["3xl","3xl","4xl"]} lineHeight={1.2}>
                         An API that would serve you lots of cute pet rabbits
                     </Text>
                      {/* Heading ends */}
                     <Box my={[4,4,8]}>
-                        <Text fontSize={"xl"} lineHeight={["2xl","2xl","4xl"]}>
+                        <Text fontStyle={'italic'}  fontSize={"xl"} lineHeight={["2xl","2xl","4xl"]}>
                             Read our <Link href="#">docs</Link> to see how to
                             use our API.
                         </Text>
-                        <Text fontSize={"xl"} lineHeight="4xl">
+                        <Text fontStyle={'italic'}  fontSize={"xl"} lineHeight="4xl">
                             You can submit photo(s) of your cute pet Rabbit here
                             too by clicking{" "}
                             <Link href="/submit-image">
@@ -61,9 +62,9 @@ function Home() {
                 </Box>
                 {/* Left Side ends above */}
                 {/* Right Side starts below */}
-                <Box h={400} w={320}>
+                <Grid placeItems={'center'} py={[5,0,0]}  w={320}>
                     <Image borderRadius='lg' src={photo} />
-                </Box>
+                </Grid>
             </Flex>
         </Container>
     );
