@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useColorMode,Flex, Spacer, Box } from '@chakra-ui/react';
+import { useColorMode,Flex, Spacer, Box,Text } from '@chakra-ui/react';
  import Link from 'next/link';
 function Navbar(){
     useEffect(()=>{toggleColorMode()},[])
@@ -14,7 +14,9 @@ function Navbar(){
         <Link href='/submit-image'>Submit images</Link>
         <Link href='/docs'>Docs</Link>
         {/* <button  onClick={toggleColorMode}>{colorMode!=='dark'?<SunIcon/>:<MoonIcon/>}</button> */}
-        <button  className={colorMode!=='light'&&'color-mode'} onClick={toggleColorMode}>{colorMode==='light'?'🌞':'🌛'}</button>
+        <button  className={colorMode!=='light'&&'color-mode'} onClick={toggleColorMode}>
+            <Text fontSize={20}>{colorMode==='light'?'🌞':'🌛'}</Text>
+            </button>
         </Flex>
 
     </Flex>
