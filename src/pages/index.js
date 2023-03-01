@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-    useColorMode,
-    Button,
     Container,
     Box,
     Flex,
@@ -10,16 +8,13 @@ import {
     TabList,
     TabPanels,
     Tab,
-    TabPanel,
     Grid,
-    Input,Image,Select 
+    Image, 
 } from "@chakra-ui/react";
 import Link from "next/link";
 import RandomPanel from '../components/RandomPanel';
 import BreedsPanel from '../components/BreedsPanel';
 function Home() {
-    useEffect(()=>{toggleColorMode()},[])
-    const { colorMode, toggleColorMode } = useColorMode();;
     const [photo, setPhoto] = useState("https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     const changePhoto=(url)=>{
          setPhoto(url);

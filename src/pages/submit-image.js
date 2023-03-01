@@ -33,23 +33,41 @@ function SubmitImage() {
     }, 5000);
   };
   const submitHandler = async () => {
-    setSubmitting(true);
-    let urlId = v4().split("-")[0];
-    let imageRef = ref(storage, `rabbits/${urlId}`);
-    uploadBytes(imageRef, fileData).then(async () => {
-      let url = await getDownloadURL(imageRef);
-      let returnedId = await fetch("/api/addrabbit", {
-        method: "POST",
-        mode: "cors",
-        credentials: "same-origin",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ breed, urlId, url }),
-      }).then((a) => a.json());
-      resetForm();
-      setUrl(returnedId);
-    });
+    if(fileData){
+      setSubmitting(true);
+      let urlId = v4().split("-")[0];
+      let imageRef = ref(storage, `rabbits/${urlId}`);
+      uploadBytes(imageRef, fileData).then(async () => {
+        let url = await getDownloadURL(imageRef);
+        let returnedId = await fetch("/api/addrabbit", {
+          method: "POST",
+          mode: "cors",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ breed, urlId, url }),
+        }).then((a) => a.json());
+        resetForm();
+        toast({
+          title: 'Success.',
+          description: "Your image has been uploaded.",
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        })
+        setUrl(returnedId);
+      });
+    }
+    else{
+      toast({
+        title: 'Failure.',
+        description: "Please select a file.",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+    }
   };
   const copyLink=()=>{
     navigator.clipboard.writeText(returnedUrl);
@@ -63,7 +81,7 @@ function SubmitImage() {
   }
   return (
     <Container maxW="40ch" py={16}>
-        <Text mb={2} fontSize={'2xl'}>Submit a photo of your pet rabbit</Text>
+        <Text mb={2} fontSize={'2xl'}>Submit a photo of your  rabbit</Text>
       <FormControl>
         <FormLabel>Breed Name</FormLabel>
         <Input 
@@ -75,7 +93,7 @@ function SubmitImage() {
           type="email"
           isRequired
         />
-        <FormLabel fontStyle={'italic'}>Upload a file of your pet rabbit 🐰</FormLabel>
+        <FormLabel fontStyle={'italic'}>Upload a file of your rabbit 🐰</FormLabel>
         <input
           ref={fileInputRef}
           type="file"
@@ -90,11 +108,11 @@ function SubmitImage() {
         >
           Submit
         </Button>
-        {isSubmitted && (
+        {/* {isSubmitted && (
           <Text mt={6} fontStyle={'italic'} textAlign="center" fontWeight={"bold"} color={"green"}>
             Your image has been uploaded 🐇
           </Text>
-        )}
+        )} */}
         {returnedUrl && (
           <Box mt={6} textAlign="center" fontWeight={"bold"}>
             <Text>Here is the link to your image 👇</Text>
@@ -102,7 +120,7 @@ function SubmitImage() {
             <Link fontStyle={'italic'} color={"green"} isExternal href={returnedUrl}>
               {returnedUrl } 
             </Link>
-            <CopyIcon onClick={copyLink} cursor={'pointer'} color={"green"} ml={2}/>
+            <CopyIcon onClick={copyLink} cursor={'pointer'}   ml={2}/>
             </Flex>
           </Box>
         )}

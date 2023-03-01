@@ -1,10 +1,10 @@
-import { useColorMode,Flex, Spacer,Container, Box, Button } from '@chakra-ui/react';
-import { SunIcon,MoonIcon } from '@chakra-ui/icons';
-import Link from 'next/link';
-import { color } from 'framer-motion';
+import { useEffect } from 'react';
+import { useColorMode,Flex, Spacer, Box } from '@chakra-ui/react';
+ import Link from 'next/link';
 function Navbar(){
+    useEffect(()=>{toggleColorMode()},[])
     const { colorMode, toggleColorMode } = useColorMode();
-    return  <Box bg="blackAlpha.500">
+    return  <Box bg={colorMode==='light'?'blue.900':'blackAlpha.900'}>
 
     <Flex p={5} color={"white"} maxW={"960px"} mx={'auto'}>
         <Link href='/'>Rabbit API</Link>
