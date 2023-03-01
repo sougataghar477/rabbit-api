@@ -25,7 +25,8 @@ function BreedsPanel({ changePhoto }) {
         }, 5000);
     }
     return (<TabPanel p={0}>
-        <Select variant={'filled'} mt={4} placeholder='Select option' onChange={e => breedCall(e.target.value)}>
+            <Text  mt={4}>Fetch an image of a breed by selecting an option</Text>
+        <Select variant={'filled'} mt={2} placeholder='Select option' onChange={e => breedCall(e.target.value)}>
             {rabbitBreeds.map(option =>
                 <option key={option} value={option}>{option}</option>)}
         </Select>
