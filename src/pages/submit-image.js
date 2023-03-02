@@ -47,16 +47,26 @@ function SubmitImage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ breed, urlId, url }),
-        }).then((a) => a.json());
-        setUrl(returnedId);
-        resetForm();
-        toast({
+        }).then((a) => a.json()).then(data =>{
+          setUrl(data);
+          resetForm();
+          toast({
           title: 'Success.',
           description: "Your image has been uploaded.",
           status: 'success',
           duration: 3000,
           isClosable: true,
         })
+        }).catch(err=> setUrl("Something went wrong.Please try again."))
+        // setUrl(returnedId);
+        // resetForm();
+        // toast({
+        //   title: 'Success.',
+        //   description: "Your image has been uploaded.",
+        //   status: 'success',
+        //   duration: 3000,
+        //   isClosable: true,
+        // })
       });
     }
     else{
