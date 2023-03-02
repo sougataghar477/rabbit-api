@@ -27,10 +27,10 @@ function SubmitImage() {
     setfileData(null);
     setSubmitting(false);
     fileInputRef.current.value = "";
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    // setSubmitted(true);
+    // setTimeout(() => {
+    //   setSubmitted(false);
+    // }, 5000);
   };
   const submitHandler = async () => {
     if(fileData){
@@ -48,6 +48,7 @@ function SubmitImage() {
           },
           body: JSON.stringify({ breed, urlId, url }),
         }).then((a) => a.json());
+        setUrl(returnedId);
         resetForm();
         toast({
           title: 'Success.',
@@ -56,7 +57,6 @@ function SubmitImage() {
           duration: 3000,
           isClosable: true,
         })
-        setUrl(returnedId);
       });
     }
     else{
