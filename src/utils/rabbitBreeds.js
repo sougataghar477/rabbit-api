@@ -26,6 +26,7 @@ const rabbitBreeds = [
     "Lionhead",
     "Mini Lop",
     "Mini Rex",
+    "Mixed",
     "Netherland Dwarf",
     "New Zealand",
     "Palomino",
