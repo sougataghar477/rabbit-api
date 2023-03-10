@@ -2,9 +2,6 @@ import { useEffect } from "react";
 import { useColorMode, Flex, Spacer, Box, Text } from "@chakra-ui/react";
 import Link from "next/link";
 function Navbar() {
-    useEffect(() => {
-        toggleColorMode();
-    }, []);
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <Box bg={colorMode === "light" ? "blue.900" : "blackAlpha.900"}>
