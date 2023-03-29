@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Input, Text, Button, TabPanel, Select } from "@chakra-ui/react";
 import rabbitBreeds from "../utils/rabbitBreeds";
 function BreedsPanel({ changePhoto }) {
-    // const [breed, setBreed] = useState("");
     let [errorMsg, setMsg] = useState("");
     let [isDisabled, setDisabled] = useState(false);
     const breedCall = async (breed) => {
