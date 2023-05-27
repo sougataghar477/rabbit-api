@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import { useColorMode, Flex, Spacer, Box, Text } from "@chakra-ui/react";
+import { useColorMode, Flex, Spacer, Box, Text,Image } from "@chakra-ui/react";
 import Link from "next/link";
 function Navbar() {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <Box bg={colorMode === "light" ? "blue.900" : "blackAlpha.900"}>
             <Flex p={5} color={"white"} maxW={"960px"} mx={"auto"}>
-                <Link href="/">Rabbit API</Link>
+                <Link href="/"><Image w={12} src='/rabbit.png' /></Link>
                 <Spacer />
 
-                <Flex columnGap={5}>
+                <Flex columnGap={5} alignItems='center'>
                     <Link href="/submit-image">Submit images</Link>
                     <Link href="/docs">Docs</Link>
                     <button
