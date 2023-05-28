@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <Box bg={colorMode === "light" ? "blue.900" : "blackAlpha.900"}>
             <Flex p={5} color={"white"} maxW={"960px"} mx={"auto"}>
-                <Link href="/"><Image w={12} src='/rabbit.png' /></Link>
+                <Link href="/"><Image w={12} src='/rrrrabbit.png' /></Link>
                 <Spacer />
 
                 <Flex columnGap={5} alignItems='center'>
