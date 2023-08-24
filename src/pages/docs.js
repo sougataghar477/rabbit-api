@@ -20,22 +20,22 @@ function Docs() {
         <Text mb={2} fontSize={'3xl'} fontStyle='italic'><u>Documentation</u></Text>
         <Text fontStyle={'italic'}>Click on any code to copy it</Text>
         <Text  fontSize={'2xl'}>Fetch random image from a breed</Text>
-        <Code cursor={'pointer'} onClick={copyCode} my={2} >https://rabbit-api-pi.vercel.app/api/breeds/[name]  </Code> 
+        <Code cursor={'pointer'} onClick={copyCode} my={2} >https://rabbit-api-two.vercel.app/api/breeds/[name]  </Code> 
         <Text   >Example:</Text>
-        <Code cursor={'pointer'} onClick={copyCode} my={2} >https://rabbit-api-pi.vercel.app/api/breeds/Rex</Code>
+        <Code cursor={'pointer'} onClick={copyCode} my={2} >https://rabbit-api-two.vercel.app/api/breeds/Rex</Code>
         </Box>
         <Box mb={6}>
 
         <Text    fontSize={'2xl'}>Fetch random image from the database</Text>
         <Text   >Example:</Text>
-        <Code cursor={'pointer'} onClick={copyCode} my={2}>https://rabbit-api-pi.vercel.app/api/random</Code> 
+        <Code cursor={'pointer'} onClick={copyCode} my={2}>https://rabbit-api-two.vercel.app/api/random</Code> 
         </Box>
         <Box mb={6}>
 
         <Text    fontSize={'2xl'}>Fetch  image from an id you got after submitting.</Text>
-        <Code cursor={'pointer'} onClick={copyCode}  my={2}>https://rabbit-api-pi.vercel.app/api/id/[urlId]</Code> 
+        <Code cursor={'pointer'} onClick={copyCode}  my={2}>https://rabbit-api-two.vercel.app/api/id/[urlId]</Code> 
         <Text  >Example:</Text>
-        <Code cursor={'pointer'} onClick={copyCode} my={2}>https://rabbit-api-pi.vercel.app/api/id/c4fw4c</Code> 
+        <Code cursor={'pointer'} onClick={copyCode} my={2}>https://rabbit-api-two.vercel.app/api/id/c4fw4c</Code> 
         </Box>
     </Container> );
 }
