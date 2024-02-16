@@ -43,15 +43,7 @@ function BreedsPanel({ changePhoto }) {
                     {errorMsg}
                 </Text>
             )}
-            <Button
-                isDisabled={isDisabled}
-                isLoading={isDisabled}
-                mt={4}
-                w="100%"
-                onClick={breedCall}
-            >
-                Fetch and show a new image
-            </Button>
+
         </TabPanel>
     );
 }
