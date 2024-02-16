@@ -31,7 +31,7 @@ function Home() {
                      {/* Heading ends */}
                     <Box my={[4,4,8]}>
                         <Text fontStyle={'italic'}  fontSize={"xl"} lineHeight={["2xl","2xl","4xl"]}>
-                            Read our <Link href="#">docs</Link> to see how to
+                            Read <Link href="/docs"><u>our docs</u></Link> to see how to
                             use our API.
                         </Text>
                         <Text fontStyle={'italic'}  fontSize={"xl"} lineHeight="4xl">
