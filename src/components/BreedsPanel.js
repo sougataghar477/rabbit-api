@@ -32,9 +32,9 @@ function BreedsPanel({ changePhoto }) {
                 placeholder="Select option"
                 onChange={(e) => breedCall(e.target.value)}
             >
-                {rabbitBreeds.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
+                {rabbitBreeds.map((breed) => (
+                    <option key={breed} value={breed}>
+                        {breed}
                     </option>
                 ))}
             </Select>
