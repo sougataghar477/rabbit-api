@@ -14,7 +14,8 @@ import {
   Flex,
   Tooltip,
   useToast 
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
+
 import {CopyIcon, InfoOutlineIcon} from '@chakra-ui/icons'
 function SubmitImage() {
   const toast=useToast();
@@ -82,20 +83,16 @@ function SubmitImage() {
         <Text mb={2} fontSize={'2xl'}>Submit a photo of your  rabbit</Text>
       <FormControl isRequired>
         <FormLabel>Breed Name</FormLabel>
-        <Flex  gap={2}    mb={6} alignItems={'center'}>
+         
         <Input 
           placeholder="Enter breed name"
           onInput={(e) => setBreed(e.target.value)}
           value={breed}
           borderRadius={0}
-     
           type="text"
-          isRequired/>
-          <Tooltip label='If you do not know the breed,type Unknown'>
-            <InfoOutlineIcon/>
-          </Tooltip>
-
-        </Flex>
+          isRequired
+        />
+        <Text fontStyle={'italic'} my={4}>If you do not know the breed,type Unknown or if your rabbit is mixed type Mixed</Text>
         <FormLabel fontStyle={'italic'}>Upload a file of your rabbit 🐇</FormLabel>
         <input
           ref={fileInputRef}
