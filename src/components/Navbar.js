@@ -1,10 +1,10 @@
-import { useEffect } from "react";
 import { useColorMode, Flex, Spacer, Box, Text, Image } from "@chakra-ui/react";
+import {SunIcon,MoonIcon} from '@chakra-ui/icons'
 import Link from "next/link";
 function Navbar() {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
-        <Box bg={colorMode === "light" ? "blue.900" : "blackAlpha.900"}>
+        <Box bg={colorMode === "light" ? "#2CB0FF" : "blackAlpha.900"}>
             <Flex p={5} color={"white"} maxW={"960px"} mx={"auto"}>
                 <Link href="/"><Flex alignItems={'center'}><Image w={12} src='/rrrrabbit.png' /><span>Rabbit API</span></Flex></Link>
                 <Spacer />
@@ -20,7 +20,7 @@ function Navbar() {
                         title="Click to toggle the mode."
                         onClick={toggleColorMode}
                     >
-                        {colorMode === "light" ? "🌞" : "🌛"}
+                        {colorMode === "light" ? <SunIcon/> :<MoonIcon/>}
                     </button>
                 </Flex>
             </Flex>
