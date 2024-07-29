@@ -1,3 +1,4 @@
+import rabbitBreeds from "../utils/rabbitBreeds";
 import { v4 } from "uuid";
 import { useState, useRef } from "react";
 import { storage } from "../utils/firebase";
@@ -12,7 +13,7 @@ import {
   Box,
   Link,
   Flex,
-  Tooltip,
+  Select,
   useToast 
 } from "@chakra-ui/react";
 
@@ -84,15 +85,27 @@ function SubmitImage() {
       <FormControl isRequired>
         <FormLabel>Breed Name</FormLabel>
          
-        <Input 
+        {/* <Input 
           placeholder="Enter breed name"
           onInput={(e) => setBreed(e.target.value)}
           value={breed}
           borderRadius={0}
           type="text"
           isRequired
-        />
-        <Text fontStyle={'italic'} my={4}>If you do not know the breed,type Unknown or if your rabbit is mixed type Mixed</Text>
+        /> */}
+        <Select
+                variant={"filled"}
+                mt={2}
+                placeholder="Select option"
+                onChange={(e) => setBreed(e.target.value)}
+            >
+                {rabbitBreeds.map((breed) => (
+                    <option key={breed} value={breed}>
+                        {breed}
+                    </option>
+                ))}
+            </Select>
+        <Text fontStyle={'italic'} my={4}>If you do not know the breed,select Unknown or if your rabbit is mixed select Mixed</Text>
         <FormLabel fontStyle={'italic'}>Upload a file of your rabbit 🐇</FormLabel>
         <input
           ref={fileInputRef}
