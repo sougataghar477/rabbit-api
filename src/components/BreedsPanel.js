@@ -3,15 +3,15 @@ import { Input, Text, Button, TabPanel, Select } from "@chakra-ui/react";
 import rabbitBreeds from "../utils/rabbitBreeds";
 function BreedsPanel({ changePhoto }) {
     let [errorMsg, setMsg] = useState("");
-    let [isDisabled, setDisabled] = useState(false);
+    let [isLoading, setLoading] = useState(false);
     const breedCall = async (breed) => {
         if (breed.length > 0) {
-            setDisabled(true);
+            setLoading(true);
             let rabbit = await fetch(`/api/breeds/${breed}`).then((a) =>
                 a.json()
             );
             console.log(rabbit);
-            setDisabled(false);
+            setLoading(false);
             rabbit.url ? changePhoto(rabbit.url) : errorHandling(rabbit);
         } else {
             errorHandling("Please select an option");
@@ -38,6 +38,9 @@ function BreedsPanel({ changePhoto }) {
                     </option>
                 ))}
             </Select>
+            {isLoading && <Text fontWeight={"bold"} mt={4}>
+                    Loading...
+                </Text>}
             {errorMsg && (
                 <Text fontWeight={"bold"} mt={4} color="red">
                     {errorMsg}
