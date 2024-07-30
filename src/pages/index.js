@@ -21,13 +21,8 @@ function Home() {
          setPhoto(url);
     }
     return (
-        <>
-        <Head>
-        <title>Rabbit API</title>
-        <meta name="description" content="Access detailed rabbit data, including breeds, care information, health tips, and more with our Rabbit API. Perfect for developers and rabbit enthusiasts."/>
-  <meta name="keywords" content="Rabbit API, rabbit data, rabbit breeds, rabbit care, rabbit health, rabbit information, rabbit database, animal API, pet API, rabbit facts, rabbit species, rabbit nutrition, rabbit behavior, rabbit breeding, rabbit habitat"/>
-        <link rel="icon" href='/rrrrabbit.png' />
-      </Head>
+      
+        
         <Container maxW={"960px"} py={[4, 4, 16]}>
             <Flex justifyContent="center" gap={"12px"} wrap="wrap">
                 {/* Left Side starts below */}
@@ -70,7 +65,7 @@ function Home() {
                 </Grid>
             </Flex>
         </Container>
-        </>
+ 
     );
 }
 export default Home;
