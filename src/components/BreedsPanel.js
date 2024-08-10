@@ -10,7 +10,6 @@ function BreedsPanel({ changePhoto }) {
             let rabbit = await fetch(`/api/breeds/${breed}`).then((a) =>
                 a.json()
             );
-            console.log(rabbit);
             setLoading(false);
             rabbit.url ? changePhoto(rabbit.url) : errorHandling(rabbit);
         } else {
@@ -38,6 +37,7 @@ function BreedsPanel({ changePhoto }) {
                     </option>
                 ))}
             </Select>
+            <Text fontStyle={'italic'} mt={4}>Please note that not all breeds have photos but with time it will be fulfilled.</Text>
             {isLoading && <Text fontWeight={"bold"} mt={4}>
                     Loading...
                 </Text>}

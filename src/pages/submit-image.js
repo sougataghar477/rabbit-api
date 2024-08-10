@@ -84,16 +84,7 @@ function SubmitImage() {
         <Text mb={2} fontSize={'2xl'}>Submit a photo of your  rabbit</Text>
       <FormControl isRequired>
         <FormLabel>Breed Name</FormLabel>
-         
-        {/* <Input 
-          placeholder="Enter breed name"
-          onInput={(e) => setBreed(e.target.value)}
-          value={breed}
-          borderRadius={0}
-          type="text"
-          isRequired
-        /> */}
-        <Select
+                <Select
                 variant={"filled"}
                 mt={2}
                 placeholder="Select option"
