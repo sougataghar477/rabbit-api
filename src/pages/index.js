@@ -61,7 +61,7 @@ function Home() {
                 {/* Left Side ends above */}
                 {/* Right Side starts below */}
                 <Grid maxW={['100%',400,360,400]} placeItems={'center'} py={[5,0,0]}  >
-                    <Image  borderRadius='lg' src={photo} />
+                    <Image maxHeight={500}  borderRadius='lg' src={photo} />
                 </Grid>
             </Flex>
         </Container>
