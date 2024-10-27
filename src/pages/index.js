@@ -24,7 +24,7 @@ function Home() {
       
         
         <Container maxW={"960px"} py={16}>
-            <Flex justifyContent="center" alignItems={'center'} gap={['16px','32px','96px']} flexDirection={['column','column','row']}>
+            <Flex justifyContent="center" alignItems={'center'} gap={['16px','32px','64px','96px']} flexDirection={['column','column','row']}>
                 {/* Left Side starts below */}
                 <Box width={['auto',450,320]} flexGrow={[0,0,1]}>
                     {/* Heading start */}
