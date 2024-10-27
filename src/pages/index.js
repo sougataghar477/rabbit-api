@@ -23,12 +23,12 @@ function Home() {
     return (
       
         
-        <Container maxW={"960px"} py={[4, 4, 16]}>
-            <Flex justifyContent="center" gap={"12px"} wrap="wrap">
+        <Container maxW={"960px"} py={16}>
+            <Flex justifyContent="center" alignItems={'center'} gap={['16px','32px','96px']} flexDirection={['column','column','row']}>
                 {/* Left Side starts below */}
-                <Box flex={1}>
+                <Box width={['auto',450,320]} flexGrow={[0,0,1]}>
                     {/* Heading start */}
-                    <Text   fontSize={["3xl","3xl","4xl"]} lineHeight={1.2}>
+                    <Text  fontSize={["3xl","3xl","4xl"]} lineHeight={1.2}>
                         An API that would serve you lots of cute pet rabbits
                     </Text>
                      {/* Heading ends */}
@@ -46,7 +46,7 @@ function Home() {
                             .
                         </Text>
                     </Box>
-                    <Tabs  size={"sm"} variant="enclosed-colored" maxW={"360px"}>
+                    <Tabs mx={['auto','auto',0]} size={"sm"} variant="enclosed-colored" maxW={"360px"}>
                         <TabList>
                             <Tab >Random</Tab>
                             <Tab>By breed</Tab>
@@ -60,7 +60,7 @@ function Home() {
                 </Box>
                 {/* Left Side ends above */}
                 {/* Right Side starts below */}
-                <Grid placeItems={'center'} py={[5,0,0]}  w={320}>
+                <Grid placeItems={'center'} py={[5,0,0]}  >
                     <Image maxH={500} borderRadius='lg' src={photo} />
                 </Grid>
             </Flex>
