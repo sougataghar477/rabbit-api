@@ -13,9 +13,11 @@ import {
     Image, 
 } from "@chakra-ui/react";
 import Link from "next/link";
+import LightBox from "@/components/LightBox";
 import RandomPanel from '../components/RandomPanel';
 import BreedsPanel from '../components/BreedsPanel';
 function Home() {
+    const [lightBox,lightBoxVisibility]=useState(false);
     const [photo, setPhoto] = useState("https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     const changePhoto=(url)=>{
          setPhoto(url);
@@ -61,9 +63,10 @@ function Home() {
                 {/* Left Side ends above */}
                 {/* Right Side starts below */}
                 <Grid maxW={['100%',400,360,400]} placeItems={'center'} py={[5,0,0]}  >
-                    <Image maxHeight={500}  borderRadius='lg' src={photo} />
+                    <Image onClick={()=> lightBoxVisibility(true)} maxHeight={500}  borderRadius='lg' src={photo} />
                 </Grid>
             </Flex>
+            {lightBox && <LightBox lightBoxVisibility={lightBoxVisibility} photo={photo}/>}
         </Container>
  
     );
