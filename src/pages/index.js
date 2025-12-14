@@ -12,6 +12,7 @@ import {
     Grid,
     Image, 
 } from "@chakra-ui/react";
+import { useSpring, animated } from '@react-spring/web';
 import Link from "next/link";
 import LightBox from "@/components/LightBox";
 import RandomPanel from '../components/RandomPanel';
@@ -22,6 +23,11 @@ function Home() {
     const changePhoto=(url)=>{
          setPhoto(url);
     }
+    const fadeInStyles = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: 1 },
+        config: { duration: 1000 }
+      });
     return (
       
         
@@ -62,9 +68,12 @@ function Home() {
                 </Box>
                 {/* Left Side ends above */}
                 {/* Right Side starts below */}
+                <animated.div style={fadeInStyles}>
+
                 <Grid maxW={['100%',400,360,400]} placeItems={'center'} py={[5,0,0]}  >
                     <Image onClick={()=> lightBoxVisibility(true)} maxHeight={500}  borderRadius='lg' src={photo} />
                 </Grid>
+                </animated.div>
             </Flex>
             {lightBox && <LightBox lightBoxVisibility={lightBoxVisibility} photo={photo}/>}
         </Container>
